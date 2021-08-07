@@ -1,0 +1,8 @@
+/* Our Services Section Style */
+.services{
+    .section-header__sub-title{
+        @include min-mobile{
+            margin-left: toRem(38);
+        }
+    }
+}

@@ -1,0 +1,301 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+html,
+body{
+	scroll-behavior: smooth;
+}
+
+html{
+	font-size: 16px;
+}
+
+body {
+	color: $color-white;
+	font-family: $font-secondary;
+}
+
+a,
+a:hover,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+a[href*="mailto:"]{
+	word-wrap: anywhere;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+	outline: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* Common Slick Style */
+.slick{
+	&__arrows{
+		top: 50%;
+		position: absolute;
+		width: 3rem;
+		height: 3.8rem;
+		line-height: 3.8rem;
+		color: $color-black;
+		background: $color-white;
+		font-size: 1.3rem;
+		text-align: center;
+		cursor: pointer;
+		z-index: 2;
+		transition: all ease .3s;
+		&--left{
+			left: 0;
+			transform: translate(0,-50%);
+		}
+		&--right{
+			right: 0;
+			transform: translate(0,-50%);
+		}
+		&:hover,
+		&:focus{
+			color: $color-white;
+			background: $color-primary;
+			border-color: $color-primary;
+		}
+	}
+	&-dots{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0;
+		li{
+			&:not(:last-child){
+				margin-right: 1rem;
+			}
+			button{
+				font-size: 0;
+				width: 10px;
+				height: 10px;
+				transform: scale(0.7);
+				background: $color-primary;
+				border: 1px solid $color-primary;
+				border-radius: 50%;
+			}
+			&.slick-active{
+				button{
+					transform: scale(1);
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+/* Veno Box Style */
+.vbox{
+	&-close{
+		top: 2%;
+		right: 2%;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+		background: $color-primary !important;
+		color: $color-white !important;
+	}
+	&-preloader .sk{
+		&-child,
+		&-rect,
+		&-cube,
+		&-spinner,
+		&-rotating-plane{
+			background: $color-primary !important;
+		}
+	}
+	&-next,
+	&-prev{
+		width: 3rem;
+		height: 3rem;
+		span{
+			width: 2rem;
+			height: 2rem;
+			border-width: 4px;
+			border-top-color: $color-primary !important;
+			border-right-color: $color-primary !important;
+		}
+	}
+}
+
+/* Scroll To Top Button Style */
+.scroll-top{
+	bottom: 3%;
+	right: 1%;
+	display: none;
+	cursor: pointer;
+	z-index: 7;
+	@include mobile{
+		bottom: 2%;
+	}
+	&__btn{
+		width: 2.8rem;
+		height: 2.8rem;
+		color: $color-white;
+		background: rgba($color-gradient__one, $alpha: 0.8);
+	}
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	padding: 5rem 0;
+	@include tablet{
+		padding: 3rem 0;
+	}
+	@include mobile{
+		padding: 2.4rem 0;
+	}
+}
+
+/* Common Section Space Style */
+.section-space{
+	padding-top: toRem(55);
+	padding-bottom: toRem(55);
+}
+
+/* Common Section Heading Style */
+.section-header{
+	&__title{
+		color: $color-secondary;
+		font-size: toRem(32);
+	}
+	&__sub-title{
+		color: $color-primary;
+		font-size: 1rem;
+		font-weight: 400;
+		font-family: $font-secondary;
+	}
+}
+
+/* Common Logo Style */
+.logo{
+	font-size: toRem(30);
+	font-family: $font-logo;
+	line-height: 0;
+	img{
+		filter: drop-shadow(toRem(5) toRem(5) toRem(25) rgba($color-gradient__one, $alpha: 0.20));
+	}
+}
+
+/* Common Social Media Icons Style */
+.social{
+	&__items:not(:last-child){
+		margin-right: toRem(10);
+	}
+	&__link{
+		font-size: toRem(18);
+		@extend %transition;
+		padding: toRem(5);
+		&:hover,
+		&:focus{
+			color: $color-primary;
+		}
+	}
+	&--rounded{
+		.social__link{
+			width: toRem(50);
+			height: toRem(50);
+			border: 1px solid rgba($color-white, $alpha: 0.30);
+			&:hover,
+			&:focus{
+				color: $color-white;
+				background-color: $color-tertiary;
+				border-color: $color-tertiary;
+				box-shadow: toEm(10) toEm(10) toEm(50) rgba($color-tertiary, $alpha: 0.25);
+			}
+		}
+	}
+}
+
+/* Common Side Line Style */
+.side-line{
+	position: relative;
+	display: inline-block;
+	&::before{
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: toRem(-10);
+		transform: translate(-100%, -50%);
+		@include gradient-bg(180deg);
+		height: 1px;
+		pointer-events: none;
+		@include mobile{
+			left: initial;
+			right: toRem(-10);
+			transform: translate(100%, -50%);
+		}
+	}
+	&--38{
+		&::before{
+			width: toRem(38);
+		}
+	}
+	&--40{
+		&::before{
+			width: toRem(40);
+		}
+	}
+	&--50{
+		&::before{
+			width: toRem(50);
+		}
+	}
+	&--60{
+		&::before{
+			width: toRem(60);
+		}
+	}
+	&--81{
+		&::before{
+			width: toRem(81);
+		}
+	}
+	&--106{
+		&::before{
+			width: toRem(106);
+		}
+	}
+}
+
+/* Common Contact Details Style */
+.contact-details{
+	&__icon{
+		width: toRem(60);
+		height: toRem(60);
+		font-size: toRem(20);
+		@include gradient-bg(180deg);
+		box-shadow: toEm(10) toEm(10) toEm(50) rgba($color-gradient__one, $alpha: 0.20);
+		margin-right: toRem(10);
+	}
+	&__text{
+		font-family: $font-secondary;
+		line-height: 1.625;
+	}
+}

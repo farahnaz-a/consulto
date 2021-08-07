@@ -1,0 +1,36 @@
+/* Banner/Hero Section Style */
+.banner{
+	background: $color-secondary url(../images/banner/banner-bg.png) no-repeat center;
+	background-size: cover;
+	padding: toEm(250) 0 toEm(115);
+	@include desktop{
+		padding-top: toEm(200);
+	}
+	@include tablet{
+		padding-top: toEm(220);
+	}
+	&__sub-title{
+		font-size: toRem(16);
+		font-weight: 400;
+		font-family: $font-secondary;
+		@include min-desktop{
+			margin-left: toRem(60);
+		}
+	}
+	&__title{
+		font-size: toRem(75);
+		font-weight: 500;
+		@include min-desktop{
+			line-height: toRem(85);
+		}
+		@include desktop{
+			font-size: toRem(60);
+		}
+		@include mobile{
+			font-size: toRem(40);
+		}
+	}
+	&__text{
+		margin: toEm(15) 0 toEm(30);
+	}
+}

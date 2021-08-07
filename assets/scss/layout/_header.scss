@@ -1,0 +1,60 @@
+/* Header Section Style */
+.header{
+	&__top{
+		padding: toRem(14) 0;
+		border-bottom: 1px solid rgba($color-white, $alpha: 0.10);
+		&__contact{
+			@extend %transition;
+			&:hover,
+            &:focus{
+				color: $color-primary;
+			}
+		}
+	}
+	.navbar{
+		top: 0;
+		z-index: 99;
+		padding-top: toRem(20);
+		padding-bottom: toRem(20);
+		&-toggler{
+			font-size: 2rem;
+			color: $color-primary;
+		}
+        &-collapse{
+            @include desktop{
+                background-color: $color-secondary;
+                padding-bottom: 1rem;
+            }
+        }
+		.nav{
+			&-link{
+				font-size: toRem(20);
+				font-family: $font-secondary;
+				padding-left: toEm(12);
+				padding-right: toEm(12);
+				@extend %transition;
+				&.active,
+				&:hover,
+				&:focus{
+					color: $color-primary;
+				}
+			}
+		}
+		&--fixed{
+			position: fixed;
+			transform: translateY(-100%);
+			background-color: $color-secondary;
+			box-shadow: 0 3px 15px rgba($color: #000000, $alpha: 0.16);
+			animation: header_in .4s linear forwards;
+		}
+	}
+}
+/* Fixed Header animation */
+@keyframes header_in{
+	0%{
+		transform: translateY(-100%);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
