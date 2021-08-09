@@ -41,6 +41,12 @@
         @content;
     }
 }
+//sm-to-md
+@mixin tablet-to-desktop {
+    @media (min-width: 767px) and (max-width: 991px) {
+        @content;
+    }
+}
 //min-md
 @mixin min-desktop {
     @media (min-width: 992px) {
@@ -50,6 +56,12 @@
 //lg
 @mixin desktop-lg {
     @media (max-width: 1199px) {
+        @content;
+    }
+}
+//md-to-lg
+@mixin desktop-to-desktop-lg {
+    @media (min-width: 992px) and (max-width: 1199px) {
         @content;
     }
 }
@@ -72,6 +84,7 @@
     }
 }
 
+//Gradient Color Generator
 @mixin gradient-bg($deg) {
     background: linear-gradient($deg, $color-gradient__one, $color-gradient__two);
 }

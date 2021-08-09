@@ -7,7 +7,20 @@
 	padding: toEm(12) toEm(26.025);
 	border-radius: 5px;
 	@include gradient-bg(0deg);
-	box-shadow: toRem(5) toRem(5) toRem(25) rgba($color-gradient__one, $alpha: 0.26);
+	box-shadow: toRem(5) toRem(5) toRem(25) rgba($color-gradient__one, $alpha: 0.16);
+	@extend %transition;
+	&:hover,
+	&:focus{
+		color: $color-secondary;
+	}
+}
+
+.plus-btn{
+	width: toRem(40);
+	height: toRem(40);
+	background-color: $color-primary;
+	box-shadow: toRem(10) toRem(10) toRem(25) rgba($color-gradient__one, $alpha: 0.25);
+	border-radius: 5px;
 	@extend %transition;
 	&:hover,
 	&:focus{

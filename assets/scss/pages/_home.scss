@@ -1,13 +1,14 @@
 /* Banner/Hero Section Style */
 .banner{
-	background: $color-secondary url(../images/banner/banner-bg.png) no-repeat center;
-	background-size: cover;
+	background-image: url(../images/banner/banner-bg.png);
+	@extend %cover-bg;
 	padding: toEm(250) 0 toEm(115);
-	@include desktop{
+	@include desktop-xl{
 		padding-top: toEm(200);
+		padding-bottom: toEm(90);
 	}
 	@include tablet{
-		padding-top: toEm(220);
+		padding-top: toEm(150);
 	}
 	&__sub-title{
 		font-size: toRem(16);
@@ -32,5 +33,132 @@
 	}
 	&__text{
 		margin: toEm(15) 0 toEm(30);
+	}
+}
+
+/* Testimonial Section Style */
+.testimonial{
+	background-image: url(../images/testimonial/testimonial-bg.png);
+	@extend %cover-bg;
+	// .slick-list{
+	// 	padding-left: 40px;
+	// }
+	&__block{
+		background-color: rgba($color-mirage, $alpha: 0.75);
+		border-radius: 5px;
+		padding: toRem(10);
+		box-shadow: toRem(10) toRem(10) toRem(50) rgba($color-mirage, $alpha: 0.20);
+		@include min-desktop{
+			padding-right: toRem(30);
+		}
+		&__image{
+			@include mobile{
+				border-radius: 10px;
+			}
+		}
+		&__quote{
+			top: 50%;
+			right: 0;
+			transform: translate(40%, -30%);
+			width: toRem(50);
+			height: toRem(50);
+			box-shadow: toRem(10) toRem(10) toRem(50) rgba($color-gradient__one, $alpha: 0.30);
+			@include gradient-bg(180deg);
+		}
+		&__content{
+			@include mobile{
+				padding-top: toRem(20);
+			}
+			&__text{
+				line-height: toRem(26);
+				margin-bottom: toRem(30);
+				word-break: break-all;
+			}
+			&__title{
+				font-size: toRem(20);
+				font-weight: 500;
+				&::before{
+					content: "";
+					position: absolute;
+					top: -60%;
+					left: 0;
+					width: 110%;
+					height: 1px;
+					@include gradient-bg(0deg);
+				}
+			}
+			&__sub-title{
+				font-size: toRem(16);
+				font-weight: 300;
+			}
+			&__rating{
+				&-icon{
+					font-size: toRem(16);
+					color: $color-orange;
+					text-shadow: toRem(10) toRem(10) toRem(50) rgba($color-orange, $alpha: 0.16);
+				}
+			}
+		}
+	}
+}
+
+/* Clients Section Style */
+.clients{
+	&__list{
+		&__item{
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3){
+				border-bottom: 1px solid $color-alto;
+				.clients__block{
+					padding-bottom: toRem(22);
+				}
+			}
+			&:nth-child(3),
+			&:nth-child(4){
+				@include mobile{
+					.clients__block{
+						padding-top: toRem(22);
+						padding-bottom: toRem(22);
+					}
+				}
+			}
+			&:nth-child(4){
+				@include mobile{
+					border-bottom: 1px solid $color-alto;
+				}
+			}
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6){
+				.clients__block{
+					padding-top: toRem(22);
+				}
+			}
+			&:nth-child(2),
+			&:nth-child(5){
+				@include min-mobile{
+					border-left: 1px solid $color-alto;
+					border-right: 1px solid $color-alto;
+				}
+			}
+			&:nth-child(odd){
+				@include mobile{
+					border-right: 1px solid $color-alto;
+				}
+			}
+		}
+	}
+	&__block{
+		&__image{
+			filter: grayscale(1);
+			@extend %transition;
+		}
+		&:hover,
+		&:focus{
+			.clients__block__image{
+				filter: grayscale(0);
+			}
+		}
 	}
 }

@@ -52,35 +52,41 @@ $(function () {
 		});
 	}, false);
 
-	// jQuery(document).ready(function ($) {
-	// 	$('.counter').counterUp({
-	// 		delay: 10,
-	// 		time: 1000
-	// 	});
-	// });
+	// Counter Down
+	jQuery(document).ready(function () {
+		$('.counter__block__number').counterUp({
+			delay: 5,
+			time: 3000
+		});
+	});
 
     // //  Banner slider
-    // $(".banner__slider").slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     autoplaySpeed: 4000,
-    //     speed: 500,
-    //     arrows: true,
-    //     prevArrow:'<i class="fas fa-chevron-left slick__arrows slick__arrows--left"></i>',
-    //     nextArrow:'<i class="fas fa-chevron-right slick__arrows slick__arrows--right"></i>',
-    //     dots: false,
-    //     pauseOnHover: false,
-    //     pauseOnFocus: false,
-    //     infinite: true,
-    // });
+    $(".testimonial__slider").slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 500,
+        arrows: false,
+        dots: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        infinite: true,
+		responsive: [
+			{
+			  breakpoint: 1200,
+			  settings: {
+				slidesToShow: 1,
+			  }
+			},
+		]
+    });
 
-    // // veno box
-    // $('.venobox').venobox({
-    //     bgcolor    : '#ffffff',
-    //     spinner    : 'three-bounce',
-    //     border     : '10px',
-    //     frameheight: '82vh',
-    // });
+    // veno box
+    $('.venobox').venobox({
+        bgcolor: '#ffffff',
+        spinner: 'wandering-cubes',
+        border: '10px',
+    });
 
 });
