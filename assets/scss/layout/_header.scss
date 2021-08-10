@@ -22,7 +22,7 @@
 		}
         &-collapse{
             @include desktop{
-                background-color: $color-secondary;
+                background-color: $color-image-bg;
                 padding-bottom: 1rem;
             }
         }
@@ -33,6 +33,9 @@
 				padding-left: toEm(12);
 				padding-right: toEm(12);
 				@extend %transition;
+				@include mobile{
+					font-size: toRem(17);
+				}
 				&.active,
 				&:hover,
 				&:focus{
@@ -43,7 +46,7 @@
 		&--fixed{
 			position: fixed;
 			transform: translateY(-100%);
-			background-color: $color-secondary;
+			background-color: $color-image-bg;
 			box-shadow: 0 3px 15px rgba($color: #000000, $alpha: 0.16);
 			animation: header_in .4s linear forwards;
 		}

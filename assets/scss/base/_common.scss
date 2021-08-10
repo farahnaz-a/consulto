@@ -316,6 +316,10 @@ ol {
 		@include gradient-bg(180deg);
 		box-shadow: toEm(10) toEm(10) toEm(50) rgba($color-gradient__one, $alpha: 0.20);
 		margin-right: toRem(10);
+		@include mobile{
+			width: toRem(45);
+			height: toRem(45);
+		}
 	}
 	&__text{
 		font-family: $font-secondary;

@@ -52,7 +52,7 @@ $(function () {
 		});
 	}, false);
 
-	// Counter Down
+	// Counter down
 	jQuery(document).ready(function () {
 		$('.counter__block__number').counterUp({
 			delay: 5,
@@ -60,11 +60,11 @@ $(function () {
 		});
 	});
 
-    // //  Banner slider
+    //  Banner slider
     $(".testimonial__slider").slick({
         slidesToShow: 2,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 4000,
         speed: 500,
         arrows: false,
@@ -76,17 +76,23 @@ $(function () {
 			{
 			  breakpoint: 1200,
 			  settings: {
-				slidesToShow: 1,
+				slidesToShow: 1
 			  }
-			},
+			}
 		]
     });
 
-    // veno box
+    // Veno box popup
     $('.venobox').venobox({
         bgcolor: '#ffffff',
         spinner: 'wandering-cubes',
         border: '10px',
     });
 
+	// AOS scroll nnimation
+	AOS.init({
+		duration: 1500,
+		once: true,
+	});
+	
 });

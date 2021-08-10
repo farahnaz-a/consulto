@@ -13,6 +13,9 @@
 	&:focus{
 		color: $color-secondary;
 	}
+	@include mobile{
+		font-size: toRem(16);
+	}
 }
 
 .plus-btn{
