@@ -60,31 +60,58 @@ ol {
 /* Common Slick Style */
 .slick{
 	&__arrows{
-		top: 50%;
+		width: toRem(50);
+		height: toRem(50);
+		bottom: 0;
 		position: absolute;
-		width: 3rem;
-		height: 3.8rem;
-		line-height: 3.8rem;
-		color: $color-black;
-		background: $color-white;
-		font-size: 1.3rem;
-		text-align: center;
+		color: $color-dusty-gray;
+		background: transparent;
+		font-size: 1rem;
+		border: 1px solid $color-alto;
 		cursor: pointer;
 		z-index: 2;
-		transition: all ease .3s;
+		@include min-desktop{
+			width: toRem(70);
+			height: toRem(70);
+		}
+		@extend %transition;
 		&--left{
-			left: 0;
-			transform: translate(0,-50%);
+			left: 41vw;
+			transform: translate(-50%, 0);
 		}
 		&--right{
-			right: 0;
-			transform: translate(0,-50%);
+			right: 41vw;
+			transform: translate(50%, 0);
+		}
+		@include desktop-lg{
+			&--left{
+				left: 36vw;
+			}
+			&--right{
+				right: 36vw;
+			}
+		}
+		@include desktop{
+			&--left{
+				left: 32vw;
+			}
+			&--right{
+				right: 32vw;
+			}
+		}
+		@include mobile{
+			&--left{
+				left: 38vw;
+			}
+			&--right{
+				right: 38vw;
+			}
 		}
 		&:hover,
 		&:focus{
 			color: $color-white;
-			background: $color-primary;
-			border-color: $color-primary;
+			background: $color-secondary;
+			border-color: $color-secondary;
 		}
 	}
 	&-dots{
@@ -305,6 +332,11 @@ ol {
 			width: toRem(106);
 		}
 	}
+	&--124{
+		&::before{
+			width: toRem(124);
+		}
+	}
 }
 
 /* Common Contact Details Style */
@@ -330,7 +362,7 @@ ol {
 /* Common Horizontal Line Style */
 .hr{
 	border-color: $color-gallery;
-	margin: toRem(55) 0;
+	margin: toRem(60) 0;
 }
 
 /* Common Form and FAQ Section Style */

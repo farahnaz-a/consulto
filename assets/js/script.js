@@ -1,4 +1,4 @@
-$(function () {
+$(function ($) {
     "use strict"
 
 	//  Fixed navbar
@@ -18,7 +18,7 @@ $(function () {
 		$("html,body").animate(
 			{
 				scrollTop: 0,
-			},50,
+			},50
 		);
 	});
 	$(window).on("scroll", function () {
@@ -33,7 +33,25 @@ $(function () {
 
 	// Closes responsive menu when a scroll link is clicked
 	$(".nav-link").on("click", function () {
-		$(".navbar-collapse").collapse("hide");
+		$(".navbar-collapse").collapse("hide")
+	});
+
+	// Banner image parallax
+	$(".banner").on("mousemove", function (e){
+		let xPosition = (($(window).innerHeight() / 2) - e.pageX) / 50;
+		let yPosition = (($(window).innerHeight() / 2) - e.pageY) / 50;
+		$("#circle-left--top, #circle-right--top, #rect-sm").css(
+			"transform", `translateX(${xPosition}px) translateY(${yPosition}px)`
+		);
+		$("#success, #circle-left--bottom--sm").css(
+			"transform", `translateX(${xPosition * -1}px) translateY(${yPosition *-1}px)`
+		);
+		$("#tab-screen").css(
+			"transform", `translateX(${xPosition * -0.5}px) translateY(${yPosition * -0.8}px)`
+		);
+		$("#rect-lg").css(
+			"transform", `translateX(${xPosition * -1}px) translateY(${yPosition * -1}px)`
+		)
 	});
 
 	// Bootstrap form validation
@@ -58,9 +76,13 @@ $(function () {
 			delay: 5,
 			time: 3000
 		});
+		$('.about__conten__number').counterUp({
+			delay: 5,
+			time: 1000
+		});
 	});
 
-    //  Banner slider
+    //  Testimonial slider
     $(".testimonial__slider").slick({
         slidesToShow: 2,
         slidesToScroll: 1,
@@ -82,6 +104,36 @@ $(function () {
 		]
     });
 
+    //  Case Studies slider
+    $(".case-studies__slider").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 500,
+        arrows: true,
+        prevArrow:'<i class="flaticon-back slick__arrows d-inline-flex align-items-center justify-content-center rounded-circle slick__arrows--left"></i>',
+        nextArrow:'<i class="flaticon-next slick__arrows d-inline-flex align-items-center justify-content-center rounded-circle slick__arrows--right"></i>',
+        dots: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        infinite: true,
+		responsive: [
+			{
+			  breakpoint: 992,
+			  settings: {
+				slidesToShow: 2
+			  }
+			},
+			{
+			  breakpoint: 576,
+			  settings: {
+				slidesToShow: 1
+			  }
+			},
+		]
+    });
+
     // Veno box popup
     $('.venobox').venobox({
         bgcolor: '#ffffff',
@@ -89,10 +141,10 @@ $(function () {
         border: '10px',
     });
 
-	// AOS scroll nnimation
+	// AOS scroll animation
 	AOS.init({
 		duration: 1500,
 		once: true,
 	});
 	
-});
+})(jQuery);

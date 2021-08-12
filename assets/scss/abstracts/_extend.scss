@@ -1,4 +1,4 @@
-/* Common transition Style */
+/* Common Transition Style */
 %transition{
     transition: all linear .25s;
 }
@@ -9,4 +9,9 @@
     background-position: center;
     background-size: cover;
     background-color: $color-image-bg;
+}
+
+/* Common Transform Box for SVG Style */
+%fill-box{
+    transform-box: fill-box;
 }

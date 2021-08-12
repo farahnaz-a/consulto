@@ -1,0 +1,66 @@
+/* Case Studies Section Style */
+.case-studies{
+    &--secondary{
+        .case-studies__block{
+            margin-bottom: toRem(30);
+        }
+    }
+    &__navigation{
+        &__link{
+            color: $color-mine-shaft !important;
+            font-size: toRem(20);
+            font-family: $font-primary;
+            cursor: pointer;
+            @extend %transition;
+            &.active,
+            &:hover,
+            &:focus{
+                color: $color-primary !important;
+            }
+        }
+    }
+    &__slider{
+        padding-bottom: toRem(80);
+        @include min-desktop{
+            padding-bottom: toRem(110);
+        }
+    }
+    &__slide{
+        @include mobile{
+            display: flex !important;
+            justify-content: center;
+        }
+    }
+    &__block{
+        border-radius: 5px;
+        &__overlay{
+            top: 0;
+            left: 0;
+            padding: toRem(20);
+            background-color: rgba($color-secondary, $alpha: 0.9);
+            border-radius: inherit;
+            opacity: 0;
+            @extend %transition;
+            &__sub-title{
+                font-size: toRem(16);
+                font-family: $font-secondary;
+                @include min-mobile{
+                    margin-left: toRem(50);
+                }
+            }
+            &__title{
+                font-size: toRem(20);
+                font-weight: 500;
+            }
+            .plus-btn{
+                width: toRem(50);
+                height: toRem(50);
+            }
+        }
+        &:hover{
+            .case-studies__block__overlay{
+                opacity: 1;
+            }
+        }
+    }
+}

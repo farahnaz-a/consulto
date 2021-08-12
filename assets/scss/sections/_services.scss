@@ -38,6 +38,11 @@
             box-shadow: toRem(5) toRem(5) toRem(70) rgba($color-black, $alpha: 0.10);
             border-radius: 5px;
             transition: background linear .2s;
+            @include mobile{
+                width: toRem(90);
+                height: toRem(90);
+                font-size: toRem(48);
+            }
             &::before{
                 content: "";
                 position: absolute;
@@ -102,6 +107,25 @@
                 }
                 &__text{
                     color: inherit;
+                }
+            }
+        }
+        @include mobile{
+            &.active-sm{
+                color: $color-white;
+                background-color: $color-secondary;
+                border-color: $color-secondary;
+                .services__block{
+                    &__icon{
+                        background: transparent;
+                        box-shadow: none;
+                        &::before{
+                            opacity: 1;
+                        }
+                    }
+                    &__text{
+                        color: inherit;
+                    }
                 }
             }
         }

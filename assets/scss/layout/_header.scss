@@ -1,5 +1,8 @@
 /* Header Section Style */
 .header{
+	top: 0;
+	left: 0;
+	z-index: 99;
 	&__top{
 		padding: toRem(14) 0;
 		border-bottom: 1px solid rgba($color-white, $alpha: 0.10);
@@ -13,7 +16,7 @@
 	}
 	.navbar{
 		top: 0;
-		z-index: 99;
+		left: 0;
 		padding-top: toRem(20);
 		padding-bottom: toRem(20);
 		&-toggler{
