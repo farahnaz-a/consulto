@@ -1,4 +1,5 @@
-$(function ($) {
+$(function () {
+	
     "use strict"
 
 	//  Fixed navbar
@@ -147,4 +148,4 @@ $(function ($) {
 		once: true,
 	});
 	
-})(jQuery);
+});
